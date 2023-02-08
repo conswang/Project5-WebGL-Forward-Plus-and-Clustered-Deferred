@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MinifyPlugin = require('terser-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = function(env, argv) {
   const isProduction = argv.mode && argv.mode === 'production';
@@ -56,7 +57,12 @@ module.exports = function(env, argv) {
       }),
       new HtmlWebpackPlugin({
         template: "./index.html"
-      })
+      }),
+      new CopyWebpackPlugin({
+        patterns: [
+          { from: 'models', to: 'models' }
+        ]
+      }),
     ].filter(p => p),
     performance: {
         hints: false,
@@ -73,6 +79,6 @@ module.exports = function(env, argv) {
     },
     resolve: {
       extensions: ['.ts', '.js'],
-    },
+    }
   };
 };

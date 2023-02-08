@@ -33,7 +33,7 @@ function setRenderer(renderer) {
 gui.add(params, 'renderer', [FORWARD, FORWARD_PLUS, CLUSTERED]).onChange(setRenderer);
 
 const scene = new Scene();
-scene.loadGLTF('models/sponza/sponza.gltf');
+scene.loadGLTF('./models/sponza/sponza.gltf');
 
 // LOOK: The Wireframe class is for debugging.
 // It lets you draw arbitrary lines in the scene.
