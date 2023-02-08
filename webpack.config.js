@@ -11,7 +11,7 @@ module.exports = function(env, argv) {
     context: __dirname,
     entry: path.join(__dirname, 'src/init'),
     output: {
-      path: path.join(__dirname, 'build'),
+      path: path.join(__dirname, 'docs'),
       filename: 'bundle.js',
     },
     module: {
